@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaMask Login Example</title>
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+        body {
+            margin-left: 50px;
+        }
+
+        #profile {
+            display: none;
+        }
+        .readonly {
+            background-color: #eee;
+            color: #555;
+        }
+    </style>
+
+</head>
+<body>
+<h1>MetaMask Login Example</h1>
+<button id="loginButton">Login with MetaMask</button>
+<div id="loginResponse"></div>
+<div id="profile">
+    <h2>Profile information</h2>
+    <div id="profileForm">
+        <div>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <button onclick="processProfileData()">Submit User Profile</button>
+        </div>
+        <div id="postResponse"></div>
+    </div>
+</div>
+<script src="functions.js"></script>
+<script>
+    // Attach the login action to the button click event
+    document.getElementById('loginButton').addEventListener('click', loginWithMetaMask);
+    hideProfileUI();
+</script>
+</body>
+</html>
